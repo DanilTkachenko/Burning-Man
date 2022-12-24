@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Burning Man</title>
+	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+	<style type="text/tailwindcss">
+		@layer components {
+			/*** Burger ***/
+			/* Burger Line */
+			.burger-line {
+				width: 50px;
+				height: 3px;
+				position: absolute;
+				transform: translateX(-50%);
+				transform: translateY(-50%);
+				background-color: #fff;
+				transition: all .5s;
+			}
+			/* Active */
+			.burger-btn.active span:nth-of-type(1) {
+				display: none;
+			}
+			.burger-btn.active span:nth-of-type(2) {
+				top: 50%;
+				transform: translate(-50%, 0%);
+				transform: rotate(45deg); 
+			}
+			.burger-btn.active span:nth-of-type(3) {
+				top: 50%;
+				transform: translate(-50%, 0%);
+				transform: rotate(-45deg);
+			}
+		}
+	</style>
+	<script src="tailwind.js"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				screens: {
+					'xl': { 'max': '1920px' },
+					'lg': { 'max': '1440px' },
+					'2md': { 'max': '1200px' },
+					'md': { 'max': '1136px' },
+					'max-sm': { 'max': '600px' },
+					'min-sm': { 'min': '600px' },
+					'max-2sm': { 'max': '400px' },
+					'min-2sm': { 'min': '400px' },
+				},
+				fontFamily: {
+					sans: ['Open Sans', 'Roboto', 'sans-serif'],
+					anton: ['Anton', 'Roboto', 'sans-serif'] 
+				},
+				container: {
+					center: true,
+					screens: {
+						sm: "1170px",
+						md: "1170px",
+						lg: "1170px",
+						xl: "1170px"
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<header class="header h-screen bg-[url('images/hero.jpg')] bg-no-repeat bg-cover bg-fixed bg-center">
+		<div class="container 2md:px-[5px]">
+			<div class="h-screen text-white pt-[30px] min-sm:pt-[57px] font-anton">
+				<div class="burger-btn w-[50px] h-[30px] relative z-[2] min-sm:hidden block hover:cursor-pointer inset-0">
+					<span class="burger-line"></span>
+					<span class="burger-line top-[calc(50%-5px)]"></span>
+					<span class="burger-line top-[calc(50%+5px)]"></span>
+				</div>
+				<div class="menu flex justify-between items-center max-sm:fixed max-sm:inset-0 max-sm:w-full max-sm:h-full max-sm:bg-neutral-900 max-sm:translate-x-[-100%] max-sm:duration-500 max-sm:transition-[transform] max-sm:flex-col max-sm:justify-center max-sm:text-3xl">
+					<div class="flex gap-[69px] items-center max-sm:flex-col max-sm:mb-[69px]">
+						<a href="#!"><img src="images/logo.svg" alt="Logo"></a>
+						<nav>
+							<ul class="flex gap-[40px] max-sm:flex-col max-sm:items-center">
+								<li><a href="#!" class="hover:underline">HOME</a></li>
+								<li><a href="#about" class="hover:underline">ABOUT</a></li>
+								<li><a href="#!" class="hover:underline">TICKETS</a></li>
+								<li><a href="https://github.com/DanilTkachenko" class="hover:underline">CONTACTS</a></li>
+							</ul>
+						</nav>
+					</div>
+					<p>+1 893 839-23-64</p>
+				</div>
+				<div class="h-full flex flex-col justify-center">
+					<p class="text-[30px] mb-[-15px] tracking-widest max-2sm:text-[25px]">NOT THE EVENT. THE LIFE</p>
+					<h1 class="text-[100px] mb-[10px] max-sm:text-[60px] max-sm:mb-[5px]">BURNING MAN</h1>
+					<a href="#!" class="w-[238px] h-[57px] flex justify-center items-center border border-white border-solid hover:bg-white hover:text-black max-sm:w-[200px] max-sm:h-[47px]">BOOK THE TICKETS</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="min-h-screen" id="about">
+		<div class="container 2md:px-[5px]">
+			<div class="min-h-screen pt-[113px] font-anton">
+				<h2 class="text-[50px] mb-[58px]">ABOUT THE EVENT</h2>
+				<div class="flex max-sm:flex-wrap gap-9 mb-[67px]">
+					<div class="min-sm:w-[calc(100%/2)]">
+						<h3 class="text-[25px] mb-[19px]">REBUILDING THE SOCIETY</h3>
+						<p class="text-base text-justify font-sans">Burning Man is a network of people inspired by the values reflected in the Ten Principles 
+						and united in the pursuit of a more creative and connected existence in the world. Throughout the year we work to build Black Rock City, home of
+						the largest annual Burning Man gathering, and nurture the distinctive culture emerging from that experience.</p>
+					</div>
+					<div class="min-sm:w-[calc(100%/2)]">
+						<h3 class="text-[25px] mb-[19px]">THIS DRIVES US</h3>
+						<p class="text-base text-justify font-sans">Burning Man Project will bring experiences to people in grand, awe-inspiring and
+						joyful ways that lift the human spirit, address social problems, and inspire a sense of culture, community, and civic engagement. Burning Man
+						provides infrastructural tools and frameworks to support local communities in applying the Ten Principles through six
+						interconnected program areas, including Arts, Civic Involvement, Culture, Education, Philosophical Center, and Social Enterprise.</p>
+					</div>
+				</div>
+				<div class="flex flex-wrap justify-between md:justify-center md:gap-9">
+					<img src="images/about/img1.png" alt="Burning Man 1">
+					<img src="images/about/img2.png" alt="Burning Man 2">
+					<img src="images/about/img3.png" alt="Burning Man 3">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="footer">
+		<div class="container 2md:px-[5px]">
+			<div class="pt-[114px] pb-[80px]">
+				<p class="inline-block mr-[55px] text-sm">&copy1989-2020 burning man project</p>
+				<a href="https://github.com/DanilTkachenko" class="inline-block text-sm hover:underline">GitHub & Danil Tkachenko</a>
+			</div>
+		</div>
+	</footer>
+
+	<script src="burgerMenu.js"></script>
+</body>
+</html>
