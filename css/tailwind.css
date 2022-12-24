@@ -525,8 +525,42 @@ video {
   }
 }
 
-.absolute {
+/*** Menu ***/
+
+.menu.active {
+  transform: translate(0);
+}
+
+/*** Burger ***/
+
+/* Burger Line */
+
+.burger-line {
+  width: 50px;
+  height: 3px;
   position: absolute;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  background-color: #fff;
+  transition: all .5s;
+}
+
+/* Active */
+
+.burger-btn.active span:nth-of-type(1) {
+  display: none;
+}
+
+.burger-btn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%);
+  transform: rotate(45deg);
+}
+
+.burger-btn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%);
+  transform: rotate(-45deg);
 }
 
 .relative {
@@ -746,14 +780,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
 }
 
 .hover\:cursor-pointer:hover {
